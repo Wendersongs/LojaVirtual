@@ -27,7 +27,7 @@ public class ProdutoCtrl implements Serializable {
 	}
 
 	public List<Produto> getListagem() {
-		return ProdutoDAO.listagem(null);
+		return ProdutoDAO.listagem("");
 	}
 
 	public String actionGravar() {
