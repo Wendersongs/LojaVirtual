@@ -7,7 +7,7 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>Exemplo</title>
+	<title>Produto</title>
 </h:head>
 <h:body>
 	<h:form>
@@ -17,16 +17,14 @@
 					<h:outputLabel value="Cadastro de Disciplinas"/>
 				</f:facet>
 					<h:outputLabel value="Código"/>
-					<h:inputText readonly="true" value="#{disciplinaCtrl.disciplina.id}"/>
+                                        <h:inputText readonly="true" value="#{produtoCtrl.produto.id}"/>
 					<h:outputLabel value="Nome"/>
-					<h:inputText value="#{disciplinaCtrl.disciplina.nome}"/>
-					<h:outputLabel value="Carga Horária"/>
-					<h:inputText value="#{disciplinaCtrl.disciplina.cargaH}"/>
+                                        <h:inputText value="#{produtoCtrl.produto.nome}"/>
 					<h:outputLabel value="Valor"/>
-					<h:inputText value="#{disciplinaCtrl.disciplina.valor}"/>
+                                        <h:inputText value="#{produtoCtrl.produto.preco}"/>
 			</h:panelGrid>
-			<h:commandButton value="Lista" action="lista_disciplina"/>
-			<h:commandButton value="Gravar" action="#{disciplinaCtrl.actionGravar}"/>
+			<h:commandButton value="Lista" action="lista_produto"/>
+                        <h:commandButton value="Gravar" action="#{produtoCtrl.actionGravar()}"/>
 		</div>
 	</h:form>
 </h:body>
