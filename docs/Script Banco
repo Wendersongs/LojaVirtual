@@ -1,0 +1,15 @@
+
+CREATE TABLE public.produto
+(
+    pro_id integer NOT NULL DEFAULT nextval('produto_pro_id_seq'::regclass),
+    pro_nome character varying(60) COLLATE pg_catalog."default",
+    pro_preco double precision,
+    CONSTRAINT produto_pkey PRIMARY KEY (pro_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.produto
+    OWNER to postgres;
