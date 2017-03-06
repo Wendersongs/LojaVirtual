@@ -41,6 +41,7 @@
                 </h:dataTable>
             </div>
             <div align="center">
+                 <h:commandLink value="Inserir" action="#{produtoCtrl.actionInserir()}"/>
                 <p:dataTable value="#{produtoCtrl.listagem}" var="p">
                      <f:facet name="header"><h:outputLabel value="Lista de Produtos"/></f:facet>
                     <p:column headerText="Código">
