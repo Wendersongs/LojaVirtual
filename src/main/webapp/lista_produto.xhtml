@@ -2,43 +2,66 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
 
-<h:head>
-	<title>Produtos</title>
-</h:head>
-<h:body>
-	<h:form>
-		<div align="center">
-                    <h:commandLink value="Inserir" action="#{produtoCtrl.actionInserir()}"/>
-			
-                    <h:dataTable value="#{produtoCtrl.listagem}" var="p">
-				<f:facet name="header"><h:outputLabel value="Lista de Disciplinas"/></f:facet>
-				<h:column>
-					<f:facet name="header"><h:outputLabel value="Código"/></f:facet>
-					<h:outputLabel value="#{p.id}"/>
-				</h:column>
-				<h:column>
-					<f:facet name="header"><h:outputLabel value="Nome"/></f:facet>
-                                        <h:outputLabel value="#{p.nome}"/>
-				</h:column>
-				
-				<h:column>
-					<f:facet name="header"><h:outputLabel value="Valor"/></f:facet>
-                                        <h:outputLabel value="#{p.preco}"/>
-				</h:column>
-				<h:column>
-                                    <h:commandLink value="Alterar" action="#{produtoCtrl.actionAlterar(p)}"/>
-				</h:column>
-				<h:column>
-                                    <h:commandLink value="Excluir" action="#{produtoCtrl.actionExcluir(p)}">
-					</h:commandLink>
-				</h:column>
-			</h:dataTable>
-		</div>
-	</h:form>
-</h:body>
+    <h:head>
+        <title>Produtos</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div align="center">
+                <h:commandLink value="Inserir" action="#{produtoCtrl.actionInserir()}"/>
+
+                <h:dataTable value="#{produtoCtrl.listagem}" var="p">
+                    <f:facet name="header"><h:outputLabel value="Lista de Disciplinas"/></f:facet>
+                    <h:column>
+                        <f:facet name="header"><h:outputLabel value="Código"/></f:facet>
+                        <h:outputLabel value="#{p.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header"><h:outputLabel value="Nome"/></f:facet>
+                        <h:outputLabel value="#{p.nome}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header"><h:outputLabel value="Valor"/></f:facet>
+                        <h:outputLabel value="#{p.preco}"/>
+                    </h:column>
+                    <h:column>
+                        <h:commandLink value="Alterar" action="#{produtoCtrl.actionAlterar(p)}"/>
+                    </h:column>
+                    <h:column>
+                        <h:commandLink value="Excluir" action="#{produtoCtrl.actionExcluir(p)}">
+                        </h:commandLink>
+                    </h:column>
+                </h:dataTable>
+            </div>
+            <div align="center">
+                <p:dataTable value="#{produtoCtrl.listagem}" var="p">
+                     <f:facet name="header"><h:outputLabel value="Lista de Produtos"/></f:facet>
+                    <p:column headerText="Código">
+                        <h:outputText value="#{p.id}" />
+                    </p:column>
+                     <p:column headerText="Nome">
+                         <h:outputText value="#{p.nome}" />
+                    </p:column>
+                     <p:column headerText="Preço">
+                         <h:outputText value="#{p.preco}" />
+                    </p:column>
+
+                
+
+                </p:dataTable>  
+
+
+
+
+            </div>
+        </h:form>
+    </h:body>
 
 </html>
