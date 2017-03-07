@@ -13,3 +13,23 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.produto
     OWNER to postgres;
+
+
+-- Table: public.pessoa
+
+-- DROP TABLE public.pessoa;
+
+CREATE TABLE public.pessoa
+(
+    pessoa_id serial,
+    pessoa_nome character varying(60) COLLATE pg_catalog."default",
+    pessoa_endereco character varying(60) COLLATE pg_catalog."default",
+    CONSTRAINT pessoa_pkey PRIMARY KEY (pessoa_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.pessoa
+    OWNER to postgres;
