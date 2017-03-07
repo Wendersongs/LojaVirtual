@@ -13,35 +13,8 @@
     </h:head>
     <h:body>
         <h:form>
-            <div align="center">
-                <h:commandLink value="Inserir" action="#{produtoCtrl.actionInserir()}"/>
-
-                <h:dataTable value="#{produtoCtrl.listagem}" var="p">
-                    <f:facet name="header"><h:outputLabel value="Lista de Disciplinas"/></f:facet>
-                    <h:column>
-                        <f:facet name="header"><h:outputLabel value="Código"/></f:facet>
-                        <h:outputLabel value="#{p.id}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header"><h:outputLabel value="Nome"/></f:facet>
-                        <h:outputLabel value="#{p.nome}"/>
-                    </h:column>
-
-                    <h:column>
-                        <f:facet name="header"><h:outputLabel value="Valor"/></f:facet>
-                        <h:outputLabel value="#{p.preco}"/>
-                    </h:column>
-                    <h:column>
-                        <h:commandLink value="Alterar" action="#{produtoCtrl.actionAlterar(p)}"/>
-                    </h:column>
-                    <h:column>
-                        <h:commandLink value="Excluir" action="#{produtoCtrl.actionExcluir(p)}">
-                        </h:commandLink>
-                    </h:column>
-                </h:dataTable>
-            </div>
-            <div align="center">
-                 <h:commandLink value="Inserir" action="#{produtoCtrl.actionInserir()}"/>
+              <div align="center">
+                 <p:commandLink value="Inserir" action="#{produtoCtrl.actionInserir()}"/>
                 <p:dataTable value="#{produtoCtrl.listagem}" var="p">
                      <f:facet name="header"><h:outputLabel value="Lista de Produtos"/></f:facet>
                     <p:column headerText="Código">
