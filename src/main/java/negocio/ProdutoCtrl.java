@@ -47,7 +47,7 @@ public class ProdutoCtrl implements Serializable {
 
 	public String actionExcluir(Produto p) {
 		ProdutoDAO.excluir(p);
-		return "listajproduto";
+		return "lista_produto";
 	}
 
 	public String actionAlterar(Produto p) {

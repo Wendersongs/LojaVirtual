@@ -8,7 +8,7 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title>Produto</title>
+        <title>Pessoa</title>
     </h:head>
     <h:body>
         <h:form>
@@ -16,15 +16,15 @@
             <div align="center">
                 <p:panelGrid columns="2">
                     <f:facet name="header">
-                        <p:outputLabel value="Cadastro de Produtos"/>
+                        <p:outputLabel value="Cadastro de Pessoas"/>
                     </f:facet>  
 
                     <h:outputLabel value="Código"/>
-                    <p:inputText readonly="true" value="#{produtoCtrl.produto.id}"/>
+                    <p:inputText readonly="true" value="#{pessoaCtrl.pessoa.id}"/>
                     <p:outputLabel value="Nome"/>
-                    <p:inputText value="#{produtoCtrl.produto.nome}"/>
-                    <p:outputLabel value="Valor"/>
-                    <p:inputText value="#{produtoCtrl.produto.preco}"/>
+                    <p:inputText value="#{pessoaCtrl.pessoa.nome}"/>
+                    <p:outputLabel value="Endereço"/>
+                    <p:inputText value="#{pessoaCtrl.pessoa.endereco}"/>
                 </p:panelGrid>
 
                 <p:commandButton value="Lista" action="lista_produto"/>

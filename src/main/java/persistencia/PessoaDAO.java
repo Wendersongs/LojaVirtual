@@ -40,9 +40,9 @@ public class PessoaDAO implements Serializable {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Query consulta;
 		if (filtro.trim().length() == 0) {
-			consulta = sessao.createQuery("from pessoa order by pessoa_nome");
+			consulta = sessao.createQuery("from Pessoa order by pessoa_nome");
 		} else {
-			consulta = sessao.createQuery("from pessoa " + "where pessoa_nome like :parametro order by pessoa_nome");
+			consulta = sessao.createQuery("from Pessoa " + "where pessoa_nome like :parametro order by pessoa_nome");
 			consulta.setString("parametro", "%" + filtro + "%");
 		}
 

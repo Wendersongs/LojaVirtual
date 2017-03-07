@@ -14,7 +14,7 @@
     <h:body>
         <h:form>
               <div align="center">
-                 <p:commandLink value="Inserir" action="#{produtoCtrl.actionInserir()}"/>
+                  <p:commandLink value="Inserir" action="#{pessoaCtrl.actionInserir()}"/>
                  <p:dataTable value="#{pessoaCtrl.listagem}" var="p">
                      <f:facet name="header"><h:outputLabel value="Lista de Pessoas"/></f:facet>
                     <p:column headerText="Código">
@@ -24,7 +24,7 @@
                          <h:outputText value="#{p.nome}" />
                     </p:column>
                      <p:column headerText="Preço">
-                         <h:outputText value="#{p.preco}" />
+                         <h:outputText value="#{p.endereco}" />
                     </p:column>
 
                 
