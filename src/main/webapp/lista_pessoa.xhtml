@@ -49,12 +49,16 @@
                     </p:column>
                     <p:column>
                         <p:commandLink value="Excluir" action="#{pessoaCtrl.actionExcluir(p)}" update="@all">
+                            <p:confirm header="Confirmation" message="Tem certeza?" icon="ui-icon-alert" />
                     </p:commandLink>
                         </p:column>
                 
 
                 </p:dataTable>  
-
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                     </p:confirmDialog>
 
 
 
