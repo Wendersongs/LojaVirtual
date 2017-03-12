@@ -9,7 +9,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 @ManagedBean
-@SessionScoped
+@ViewScoped
 
 public class PessoaCtrl implements Serializable {
 
@@ -49,6 +49,7 @@ public class PessoaCtrl implements Serializable {
 
     public String actionExcluir(Pessoa p) {
         PessoaDAO.excluir(p);
+        addMessage("Sucesso", "Produto removido com sucesso!");
         return "lista_pessoa";
     }
 
@@ -57,5 +58,9 @@ public class PessoaCtrl implements Serializable {
         return "form_pessoa";
     }
 
+    public void addMessage(String summary, String detail) {
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, detail);
+        FacesContext.getCurrentInstance().addMessage(null, message);
+    }
 
 }
