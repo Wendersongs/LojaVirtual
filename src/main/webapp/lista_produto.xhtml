@@ -25,14 +25,14 @@
                         <p:menuitem value="Listar" action="lista_produto" />   
                     </p:submenu>
                     <p:submenu label="Pessoa" icon="ui-icon-person">
-                        <p:menuitem value="Inserir" action="#{pessoaCtrl.actionInserir()}" />
+                        <p:menuitem value="Inserir" action="#{pessoaCtrl.actionInserir()}" update="@all"/>
                         <p:separator />
                         <p:menuitem value="Listar" action="lista_pessoa" />   
                     </p:submenu>
                 </p:menubar>
             </div>
             <div align="center">
-                <p:commandLink value="Inserir" action="#{produtoCtrl.actionInserir()}"/>
+                
                 
                 <p:dataTable value="#{produtoCtrl.listagem}" var="p">
                     <f:facet name="header"><h:outputLabel value="Lista de Produtos"/></f:facet>
@@ -47,10 +47,10 @@
 
                     </p:column>
                     <p:column>
-                        <p:commandLink value="Alterar" action="#{produtoCtrl.actionAlterar(p)}"/>
+                        <p:commandLink value="Alterar" action="#{produtoCtrl.actionAlterar(p)}" update="@all"/>
                     </p:column>
                     <p:column>
-                        <p:commandLink value="Excluir" action="#{produtoCtrl.actionExcluir(p)}">
+                        <p:commandLink value="Excluir" action="#{produtoCtrl.actionExcluir(p)}" update="@all">
                     
                     </p:commandLink>
                         </p:column>

@@ -32,7 +32,7 @@
                 </p:menubar>
             </div>
               <div align="center">
-                  <p:commandLink value="Inserir" action="#{pessoaCtrl.actionInserir()}"/>
+                  
                  <p:dataTable value="#{pessoaCtrl.listagem}" var="p">
                      <f:facet name="header"><h:outputLabel value="Lista de Pessoas"/></f:facet>
                     <p:column headerText="Código">
@@ -44,7 +44,13 @@
                      <p:column headerText="Preço">
                          <h:outputText value="#{p.endereco}" />
                     </p:column>
-
+                    <p:column>
+                        <p:commandLink value="Alterar" action="#{pessoaCtrl.actionAlterar(p)}" update="@all"/>
+                    </p:column>
+                    <p:column>
+                        <p:commandLink value="Excluir" action="#{pessoaCtrl.actionExcluir(p)}" update="@all">
+                    </p:commandLink>
+                        </p:column>
                 
 
                 </p:dataTable>  

@@ -40,13 +40,13 @@
                     <h:outputLabel value="Código"/>
                     <p:inputText readonly="true" value="#{pessoaCtrl.pessoa.id}"/>
                     <p:outputLabel value="Nome"/>
-                    <p:inputText value="#{pessoaCtrl.pessoa.nome}"/>
+                    <p:inputText  value="#{pessoaCtrl.pessoa.nome}"  />
                     <p:outputLabel value="Endereço"/>
-                    <p:inputText value="#{pessoaCtrl.pessoa.endereco}"/>
+                    <p:inputText  value="#{pessoaCtrl.pessoa.endereco}"  />
                 </p:panelGrid>
 
-                <p:commandButton value="Lista" action="lista_produto"/>
-                <p:commandButton value="Gravar" action="#{produtoCtrl.actionGravar()}"/>
+                <p:commandButton value="Lista" action="lista_pessoa"/>
+                <p:commandButton value="Gravar" action="#{pessoaCtrl.actionGravar()}"/>
 
 
 
