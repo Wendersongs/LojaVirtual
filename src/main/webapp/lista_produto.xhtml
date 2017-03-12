@@ -48,17 +48,9 @@
                         <h:outputText value="#{p.preco}" />
 
                     </p:column>
+                                   
                     <p:column>
-                        <p:commandLink value="Alterar" action="#{produtoCtrl.actionAlterar(p)}" update="@all"/>
-                    </p:column>
-                    <p:column>
-                        <p:commandLink value="Excluir" action="#{produtoCtrl.actionExcluir(p)}" update="@all">
-                            <p:confirm header="Confirmação" message="Tem certeza?" icon="ui-icon-alert" />
-                                               
-                        </p:commandLink>
-                        </p:column>
-                    <p:column>
-                        <p:commandButton title="Editar" type="submit" styleClass="ui-confirmdialog-yes" actionListener="#{produtoCtrl.actionAlterar(p)}" update="@all" icon="ui-icon-pencil" >
+                        <p:commandButton title="Editar" type="submit" styleClass="ui-confirmdialog-yes" action="#{produtoCtrl.actionAlterar(p)}" update="@all" icon="ui-icon-pencil" >
                         </p:commandButton>
                         <p:commandButton title="Excluir" type="submit" styleClass="ui-confirmdialog-yes" actionListener="#{produtoCtrl.actionExcluir(p)}" update="@all" icon="ui-icon-trash" >
                          <p:confirm header="Confirmação" message="Tem certeza?" icon="ui-icon-alert" />   
