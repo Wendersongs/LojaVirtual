@@ -60,10 +60,17 @@ public class PessoaCtrl implements Serializable {
     }
 
     public String actionInserirFone() {
+        
         Fone fone = new Fone();
         fone.setPessoa(pessoa);
         pessoa.getFones().add(fone);
         return "form_pessoa";
+    }
+    
+    public String actionExcluirFone(Fone f) {
+        
+        return "form_pessoa";
+        
     }
 
     public void addMessage(String summary, String detail) {
