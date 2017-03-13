@@ -1,5 +1,6 @@
 package negocio;
 
+import beans.Fone;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.*;
@@ -55,6 +56,13 @@ public class PessoaCtrl implements Serializable {
 
     public String actionAlterar(Pessoa p) {
         pessoa = p;
+        return "form_pessoa";
+    }
+
+    public String actionInserirFone() {
+        Fone fone = new Fone();
+        fone.setPessoa(pessoa);
+        pessoa.getFones().add(fone);
         return "form_pessoa";
     }
 
