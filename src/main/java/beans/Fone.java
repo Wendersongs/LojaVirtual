@@ -42,7 +42,7 @@ public class Fone implements Serializable {
     }
 
     @ManyToOne
-    @JoinColumn(name = "pes_id")
+    @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
 
     public Pessoa getPessoa() {
