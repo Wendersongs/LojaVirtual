@@ -70,6 +70,28 @@
                                         
                     </p:column>
                 </p:dataTable>  
+                
+                <p:dialog header="Cadastro de forma de pagamento" widgetVar="cadDialog" modal="true"
+                    showEffect="fade" hideEffect="fade" resizable="false">
+                    <p:outputLabel id="cadDetail" style="text-align: center;">
+                        <h:panelGrid columns="2" style="text-align: Left">
+                            <h:outputLabel value="Código"/>
+                            <p:inputText value="#{formaPgtoCtrl.formaPgto.id}" size="6" maxlength="10" readonly="true"/>
+                            <h:outputLabel value="Nome"/>
+                            <h:inputText value="#{formaPgtoCtrl.formaPgto.descricao}" size="30" maxlength="20"/>
+                            <h:outputLabel value="Máximo"/>
+                            <h:inputText value="#{formaPgtoCtrl.formaPgto.numMaxParc}" size="6" maxlength="3" />
+                            <h:outputLabel value="Intervalo"/>
+                            <h:inputText value="#{formaPgtoCtrl.formaPgto.intervaloDias}" size="6" maxlength="3"/>
+                            
+                            
+                        </h:panelGrid>
+                        <p:commandButton value="Excluir" action="#{formaPgtoCtrl.actionExcluir(f)}" update="growl"/>
+                        
+                    </p:outputLabel>
+                              
+                    
+                </p:dialog>
                  
                 <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
                     <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />

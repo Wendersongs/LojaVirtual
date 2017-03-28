@@ -30,6 +30,11 @@
                         <p:separator />
                         <p:menuitem value="Listar" action="lista_pessoa" />   
                     </p:submenu>
+                      <p:submenu label="Forma Pagamento" icon="ui-icon-person">
+                        <p:menuitem value="Inserir" action="#{pessoaCtrl.actionInserir()}" />
+                        <p:separator />
+                        <p:menuitem value="Listar" action="lista_forma_pgto" />   
+                    </p:submenu>
                 </p:menubar>
             </div>
         </h:form>
