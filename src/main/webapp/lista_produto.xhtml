@@ -37,7 +37,13 @@
                 
                 
                 <p:dataTable value="#{produtoCtrl.listagem}" var="p">
-                    <f:facet name="header"><h:outputLabel value="Lista de Produtos"/></f:facet>
+                    <f:facet name="header"><h:outputLabel value="Lista de Produtos"/>
+                     <p:commandButton value="Inserir" icon="icon-novo" 
+                                         actionListener="#{formaPgtoCtrl.actionInserir()}"
+                                         oncomplete="PF('cadDialog').show()"
+                                         >
+                        </p:commandButton>
+                    </f:facet>
                     <p:column headerText="Código">
                         <h:outputText value="#{p.id}" />
                     </p:column>
@@ -58,6 +64,8 @@
                                         
                     </p:column>
                 </p:dataTable>  
+                
+
                  
                 <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
                     <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
