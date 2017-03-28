@@ -36,7 +36,13 @@
             <div align="center">
                 
                 
-                <p:dataTable value="#{produtoCtrl.listagem}" var="p">
+                <p:dataTable value="#{formaPgtoCtrl.listagem}" var="p" 
+                             paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} 
+                             {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15"
+                             rows="10"  style="margin-bottom: 20px">
+                    
                     <f:facet name="header"><h:outputLabel value="Lista de Produtos"/>
                      <p:commandButton value="Inserir" icon="icon-novo" 
                                          actionListener="#{formaPgtoCtrl.actionInserir()}"
@@ -48,10 +54,10 @@
                         <h:outputText value="#{p.id}" />
                     </p:column>
                     <p:column headerText="Nome">
-                        <h:outputText value="#{p.nome}" />
+                        <h:outputText value="#{p.descricao}" />
                     </p:column>
                     <p:column headerText="Preço">
-                        <h:outputText value="#{p.preco}" />
+                        <h:outputText value="#{p.intervaloDias}" />
 
                     </p:column>
                                    
