@@ -18,7 +18,8 @@ public class FormaPgtoCtrl implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
-    private FormaPgto formaPgto;
+    private FormaPgto formaPgto = new FormaPgto();
+    private String filtro = "";
 
     public FormaPgto getFormaPgto() {
         return formaPgto;
@@ -47,8 +48,8 @@ public class FormaPgtoCtrl implements Serializable {
         return "form_formaPgto";
     }
 
-    public String actionExcluir(FormaPgto p) {
-        FormaPgtoDAO.excluir(p);
+    public String actionExcluir() {
+        FormaPgtoDAO.excluir(formaPgto);
         addMessage("Sucesso", "FormaPgto removido com sucesso");
         return "lista_formaPgto";
     }
