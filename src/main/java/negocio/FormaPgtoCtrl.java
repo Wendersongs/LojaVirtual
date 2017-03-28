@@ -30,17 +30,20 @@ public class FormaPgtoCtrl implements Serializable {
     }
 
     public List<FormaPgto> getListagem() {
-        return FormaPgtoDAO.listagem("");
+        return FormaPgtoDAO.listagem(filtro);
     }
 
     public String actionGravar() {
+        FacesContext context = FacesContext.getCurrentInstance();
         if (formaPgto.getId() == 0) {
             FormaPgtoDAO.inserir(formaPgto);
-            return actionInserir();
+          context.addMessage(null, new FacesMessage("Sucesso", "Inserido com Sucesso"));
         } else {
             FormaPgtoDAO.alterar(formaPgto);
-            return "lista_formaPgto";
+            context.addMessage(null, new FacesMessage("Sucesso", "Alterado com Sucesso"));
+            
         }
+        return "lista_formaPgto";
     }
 
     public String actionInserir() {
@@ -52,6 +55,14 @@ public class FormaPgtoCtrl implements Serializable {
         FormaPgtoDAO.excluir(formaPgto);
         addMessage("Sucesso", "FormaPgto removido com sucesso");
         return "lista_formaPgto";
+    }
+
+    public String getFiltro() {
+        return filtro;
+    }
+
+    public void setFiltro(String filtro) {
+        this.filtro = filtro;
     }
 
     public String actionAlterar(FormaPgto p) {
