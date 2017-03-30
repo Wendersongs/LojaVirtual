@@ -1,0 +1,17 @@
+CREATE TABLE public.forma_pgto
+(
+    fpg_id serial,
+    fpg_descricao character varying COLLATE pg_catalog."default",
+    fpg_num_max_parc integer,
+    fpg_num_padrao_parc integer,
+    fpg_intervalo_dias integer,
+    fpg_percentual_acres numeric,
+    CONSTRAINT forma_pgto_pkey PRIMARY KEY (fpg_id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.forma_pgto
+    OWNER to postgres;
