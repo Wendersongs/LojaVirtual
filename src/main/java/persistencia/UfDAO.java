@@ -3,7 +3,7 @@ package persistencia;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.*;
-import beans.Produto;
+import beans.Estado;
 
 public class UfDAO implements Serializable {
 
@@ -12,37 +12,37 @@ public class UfDAO implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public static void inserir(Produto produto) {
+	public static void inserir(Estado estado) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = sessao.beginTransaction();
-		sessao.save(produto);
+		sessao.save(estado);
 		t.commit();
 		sessao.close();
 	}
 
-	public static void alterar(Produto produto) {
+	public static void alterar(Estado estado) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = sessao.beginTransaction();
-		sessao.update(produto);
+		sessao.update(estado);
 		t.commit();
 		sessao.close();
 	}
 
-	public static void excluir(Produto produto) {
+	public static void excluir(Estado estado) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = sessao.beginTransaction();
-		sessao.delete(produto);
+		sessao.delete(estado);
 		t.commit();
 		sessao.close();
 	}
 
-	public static List<Produto> listagem(String filtro) {
+	public static List<Estado> listagem(String filtro) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Query consulta;
 		if (filtro.trim().length() == 0) {
-			consulta = sessao.createQuery("from Produto order by pro_nome");
+			consulta = sessao.createQuery("from Estado order by est_nome");
 		} else {
-			consulta = sessao.createQuery("from Produto " + "where pro_nome like :parametro order by pro_nome");
+			consulta = sessao.createQuery("from Estado " + "where pro_nome like :parametro order by est_nome");
 			consulta.setString("parametro", "%" + filtro + "%");
 		}
 
