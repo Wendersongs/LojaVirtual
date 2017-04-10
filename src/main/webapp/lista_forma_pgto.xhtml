@@ -91,6 +91,7 @@
                               
                         </h:panelGrid>
                         <p:commandButton value="Gravar" action="#{formaPgtoCtrl.actionGravar()}" update="@all" /> 
+                        <p:commandButton value="Cancelar" oncomplete="PF('cadDialog').hide()" /> 
                     </p:outputLabel>              
                 </p:dialog>
 
