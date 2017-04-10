@@ -42,7 +42,7 @@ public class UfDAO implements Serializable {
 		if (filtro.trim().length() == 0) {
 			consulta = sessao.createQuery("from Estado order by est_nome");
 		} else {
-			consulta = sessao.createQuery("from Estado " + "where pro_nome like :parametro order by est_nome");
+			consulta = sessao.createQuery("from Estado " + "where est_nome like :parametro order by est_nome");
 			consulta.setString("parametro", "%" + filtro + "%");
 		}
 

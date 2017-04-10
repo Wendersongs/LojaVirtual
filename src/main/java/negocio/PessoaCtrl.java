@@ -1,5 +1,7 @@
 package negocio;
 
+import beans.Cidade;
+import beans.Estado;
 import beans.Fone;
 import java.io.Serializable;
 import java.util.List;
@@ -8,6 +10,8 @@ import persistencia.PessoaDAO;
 import beans.Pessoa;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import persistencia.CidadeDAO;
+import persistencia.UfDAO;
 
 @ManagedBean
 @SessionScoped
@@ -31,6 +35,13 @@ public class PessoaCtrl implements Serializable {
 
     public List<Pessoa> getListagem() {
         return PessoaDAO.listagem("");
+    }
+    
+      public List<Cidade> listaCidade() {
+        return CidadeDAO.listagem("");
+    }
+   public List<Estado> listaEstado() {
+        return UfDAO.listagem("");
     }
 
     public String actionGravar() {

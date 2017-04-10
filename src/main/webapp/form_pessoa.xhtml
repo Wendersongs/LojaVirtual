@@ -47,18 +47,14 @@
                     <p:inputText  value="#{pessoaCtrl.pessoa.nome}"  />
                     <p:outputLabel value="Endereço"/>
                     <p:inputText  value="#{pessoaCtrl.pessoa.endereco}"  />
-                    <p:outputLabel for="estado" value="Estado: " />
-                    <p:selectOneMenu id="uf" value="#{dropdownView.country}" style="width:150px">
-                        <p:ajax listener="#{dropdownView.onCountryChange}" update="city" />
+                    <p:outputLabel  value="Estado: " />
+                    <p:selectOneMenu id="uf" value="#{pessoaCtrl.pessoa.estado}" style="width:200px">
+                        
                         <f:selectItem itemLabel="Selecione um Estado" itemValue="" noSelectionOption="true" />
-                        <f:selectItems value="#{dropdownView.countries}" />
+                        <f:selectItems value="#{pessoaCtrl.listaEstado()}" />
                     </p:selectOneMenu>
 
-                    <p:outputLabel for="city" value="City: " />
-                    <p:selectOneMenu id="city" value="#{dropdownView.city}" style="width:150px">
-                        <f:selectItem itemLabel="Select City" itemValue="" noSelectionOption="true" />
-                        <f:selectItems value="#{dropdownView.cities}" />
-                    </p:selectOneMenu>
+
 
 
                 </p:panelGrid>
