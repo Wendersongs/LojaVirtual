@@ -16,8 +16,28 @@ public class Pessoa implements Serializable {
     @Column(name = "pessoa_nome", length = 60, nullable = true)
     private String nome;
     @Column(name = "pessoa_endereco", nullable = true)
+    private String cidade;
+    @Column(name = "pessoa_cidade", nullable = true)
+    private String estado;
+    @Column(name = "pessoa_estado", nullable = true)
 
     private String endereco;
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
     public int getId() {
         return id;
