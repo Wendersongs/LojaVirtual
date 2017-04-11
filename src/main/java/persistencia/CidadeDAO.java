@@ -42,8 +42,23 @@ public class CidadeDAO implements Serializable {
 		if (filtro.trim().length() == 0) {
 			consulta = sessao.createQuery("from Cidade order by cid_nome");
 		} else {
-			consulta = sessao.createQuery("from Cidade " + "where pro_nome like :parametro order by cid_nome");
+			consulta = sessao.createQuery("from Cidade " + "where cid_nome like :parametro order by cid_nome");
 			consulta.setString("parametro", "%" + filtro + "%");
+		}
+
+		List lista = consulta.list();
+		sessao.close();
+		return lista;
+	}
+        
+        public static List<Cidade> listaFiltrado(String filtro) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Query consulta;
+		if (filtro.trim().length() == 0) {
+			consulta = sessao.createQuery("from Cidade order by cid_nome");
+		} else {
+			consulta = sessao.createQuery("from Cidade " + "where est_id = :parametro order by cid_nome");
+			consulta.setString("parametro",  filtro );
 		}
 
 		List lista = consulta.list();
