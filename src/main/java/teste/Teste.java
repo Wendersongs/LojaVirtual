@@ -1,19 +1,28 @@
 package teste;
 
+import beans.Cidade;
 import beans.Produto;
+import java.util.List;
 import negocio.ProdutoCtrl;
+import persistencia.CidadeDAO;
 import persistencia.ProdutoDAO;
 
 public class Teste {
 	
+    public static void main(String[] args) {
+        List<Cidade> listaCidade = listaCidades();
+    
+    
+    }
 	
 	
 public static void main (){
 
-	Produto produto = new Produto();
-	produto.setNome("Rosca"); 
-	produto.setPreco(20);
-	ProdutoCtrl p = new ProdutoCtrl();
-	ProdutoDAO.inserir(produto);	
+    
 }
+
+
+public static List<Cidade> listaCidades() {
+        return CidadeDAO.listaFiltrado(1);
+    }
 }

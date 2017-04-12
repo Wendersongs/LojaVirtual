@@ -51,14 +51,14 @@ public class CidadeDAO implements Serializable {
 		return lista;
 	}
         
-        public static List<Cidade> listaFiltrado(String filtro) {
+        public static List<Cidade> listaFiltrado(int filtro) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Query consulta;
-		if (filtro.trim().length() == 0) {
+		if (String.valueOf(filtro).trim().length() == 0) {
 			consulta = sessao.createQuery("from Cidade order by cid_nome");
 		} else {
 			consulta = sessao.createQuery("from Cidade " + "where est_id = :parametro order by cid_nome");
-			consulta.setString("parametro",  filtro );
+			consulta.setInteger("parametro",  filtro );
 		}
 
 		List lista = consulta.list();
