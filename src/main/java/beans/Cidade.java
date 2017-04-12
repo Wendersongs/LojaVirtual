@@ -41,7 +41,10 @@ import javax.persistence.*;
         this.nome = nome;
     }
 		
-
+    @Override
+    public String toString() {
+        return  nome ;
+    }
 		
 	}
 
