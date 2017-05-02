@@ -17,6 +17,8 @@ public class Estado implements Serializable {
 
     @Column(name = "est_sigla", nullable = true)
     private String sigla;
+    
+    
 
     public String getSigla() {
         return sigla;
