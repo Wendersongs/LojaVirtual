@@ -58,7 +58,11 @@ public class ProdutoCtrl implements Serializable {
         return "form_produto";
     }
 
-    
+    public String carrinho() {
+        //ProdutoDAO.excluir(p);
+        addMessage("Sucesso", "Produto Incluído no carrinho");
+        return "index.xhtml";
+    }
 
         public void destroyWorld() {
             addMessage("System Error", "Please try again later.");

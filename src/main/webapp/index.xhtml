@@ -13,10 +13,9 @@
 <h:body>
 	<h:form>
 		<div align="center">
-			<p:menubar>
-
+			<p:menubar >
 				<p:submenu label="Pessoa" icon="ui-icon-person">
-					<p:menuitem value="Inserir" action="#{pessoaCtrl.actionInserir()}" />
+					<p:menuitem value="Inserir" action="#{pessoaCtrl.actionInserir}" />
 					<p:separator />
 					<p:menuitem value="Listar" action="lista_pessoa" />
 				</p:submenu>
@@ -30,20 +29,27 @@
 			<f:facet name="header">
             Produtos à Venda
         </f:facet>
-
+			<p:growl id="message" showDetail="true" />
 			<p:panel header="#{p.nome}" style="text-align:center">
-				<h:panelGrid columns="1" style="width:100 px">
+				<h:panelGrid columns="1"
+					style="width:100 px;text-align:center; horizontal-align:center;"
+					styleClass="center-table">
 					<p:graphicImage library="images" name="#{p.id}.jpg" />
-
 					<h:outputText value="R$ #{p.preco}" />
 
+
+					<p:commandButton value="Adicionar ao Carrinho" id="ajax"
+						actionListener="#{produtoCtrl.carrinho}" update="@all"
+						styleClass="ui-priority-primary" />
 					
+
+
 				</h:panelGrid>
 			</p:panel>
 
 		</p:dataGrid>
-		
-  
+
+
 	</h:form>
 </h:body>
 
