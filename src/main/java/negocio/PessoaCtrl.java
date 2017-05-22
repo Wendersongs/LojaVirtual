@@ -50,7 +50,7 @@ public class PessoaCtrl implements Serializable {
 
     public String actionExcluir(Pessoa p) {
         PessoaDAO.excluir(p);
-        addMessage("Sucesso", "Produto removido com sucesso!");
+        addMessage("Sucesso", "Cliente removido com sucesso!");
         return "lista_pessoa";
     }
 

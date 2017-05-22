@@ -13,13 +13,16 @@
 <h:body>
 	<h:form>
 		<div align="center">
-			<p:menubar >
-				<p:submenu label="Pessoa" icon="ui-icon-person">
-					<p:menuitem value="Inserir" action="#{pessoaCtrl.actionInserir}" />
-					<p:separator />
-					<p:menuitem value="Listar" action="lista_pessoa" />
-				</p:submenu>
-			</p:menubar>
+			<p:toolbar>
+
+				<f:facet name="right">
+					<p:commandButton title="Cadastrar" icon="ui-icon-person" action="#{pessoaCtrl.actionInserir()}"/>
+					<p:commandButton  title="Carrinho" icon="ui-icon-cart" />
+					<p:commandButton  title="Administração" icon="ui-icon-locked" />
+				</f:facet>
+
+			</p:toolbar>
+			
 		</div>
 		<p:dataGrid var="p" value="#{produtoCtrl.listagem}" columns="3"
 			layout="grid" rows="12" paginator="true" id="produtos"
@@ -39,17 +42,11 @@
 
 
 					<p:commandButton value="Adicionar ao Carrinho" id="ajax"
-						actionListener="#{produtoCtrl.carrinho}" update="@all"
+						actionListener="#{produtoCtrl.carrinho}" update="message"
 						styleClass="ui-priority-primary" />
-					
-
-
 				</h:panelGrid>
 			</p:panel>
-
 		</p:dataGrid>
-
-
 	</h:form>
 </h:body>
 

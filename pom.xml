@@ -70,21 +70,27 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>3.2.6.RELEASE</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>3.2.6.RELEASE</version>
 		</dependency>
-		
-				<!-- SPRING CORE -->
 
+		<!-- SPRING CORE -->
+
+
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
