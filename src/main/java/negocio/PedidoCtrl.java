@@ -2,10 +2,14 @@ package negocio;
 
 import beans.Fone;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.*;
-import persistencia.PessoaDAO;
-import beans.Pessoa;
+import persistencia.PedidoDAO;
+import beans.Pedido;
+import beans.PedidoItens;
+import beans.Produto;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
@@ -19,57 +23,66 @@ public class PedidoCtrl implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
-    private Pessoa pessoa;
+    private Pedido pedido;
 
-    public Pessoa getPessoa() {
-        return pessoa;
+    public Pedido getPedido() {
+        return pedido;
     }
 
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
-    public List<Pessoa> getListagem() {
-        return PessoaDAO.listagem("");
+    public List<Pedido> getListagem() {
+        return PedidoDAO.listagem("");
     }
 
     public String actionGravar() {
-        if (pessoa.getId() == 0) {
-            PessoaDAO.inserir(pessoa);
+        if (pedido.getId() == 0) {
+            PedidoDAO.inserir(pedido);
             return actionInserir();
         } else {
-            PessoaDAO.alterar(pessoa);
-            return "lista_pessoa";
+            PedidoDAO.alterar(pedido);
+            return "lista_pedido";
         }
     }
 
     public String actionInserir() {
-        pessoa = new Pessoa();
-        return "form_pessoa";
+        pedido = new Pedido();
+        return "form_pedido";
     }
 
-    public String actionExcluir(Pessoa p) {
-        PessoaDAO.excluir(p);
-        addMessage("Sucesso", "Cliente removido com sucesso!");
-        return "lista_pessoa";
+    public String actionExcluir(Pedido p) {
+        PedidoDAO.excluir(p);
+        addMessage("Sucesso", "Pedido removido com sucesso!");
+        return "lista_pedido";
     }
 
-    public String actionAlterar(Pessoa p) {
-        pessoa = p;
-        return "form_pessoa";
+    public String actionAlterar(Pedido p) {
+        pedido = p;
+        return "form_pedido";
     }
 
-    public String actionInserirFone() {
-        
-        Fone fone = new Fone();
-        fone.setPessoa(pessoa);
-        pessoa.getFones().add(fone);
-        return "form_pessoa";
-    }
+/*    public String actionInserirItens(produto) {
+        PedidoItens itens = new PedidoItens();
+        itens.setPedido(pedido);
+        itens.getProduto().add(produto)
+        return "form_pedido";
+    }*/
+
+    
+    
+        public String carrinho(Produto p) {
+        	PedidoItens itens = new PedidoItens();
+        	List<Produto> produtos = new ArrayList<Produto>(); 
+        	produtos.add(p);
+            addMessage("Sucesso", "Produto Incluído no carrinho");
+            return "index.xhtml";
+        }
     
     public String actionExcluirFone(Fone f) {
         
-        return "form_pessoa";
+        return "form_pedido";
         
     }
 

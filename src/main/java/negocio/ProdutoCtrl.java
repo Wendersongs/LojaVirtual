@@ -59,7 +59,7 @@ public class ProdutoCtrl implements Serializable {
     }
 
     public String carrinho() {
-        //ProdutoDAO.excluir(p);
+        
         addMessage("Sucesso", "Produto Incluído no carrinho");
         return "index.xhtml";
     }
