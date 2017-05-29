@@ -40,6 +40,19 @@ import javax.persistence.*;
 		public void setPreco(float preco) {
 			this.preco = preco;
 		}
+		
+	    @ManyToOne
+	    @JoinColumn(name = "produto_id")
+	    private PedidoItens pedidoItens;
+
+	    public PedidoItens getPedidoItens() {
+	        return pedidoItens;
+	    }
+
+	    public void setPedidoItens(PedidoItens pedidoItens) {
+	        this.pedidoItens = pedidoItens;
+
+	    }
 	}
 
 
