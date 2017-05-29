@@ -1,0 +1,10 @@
+CREATE TABLE public.fone
+(
+    fon_id serial not null,
+    pes_id integer,
+    fon_numero character varying(20) COLLATE pg_catalog."default",
+    fon_descricao character varying(30) COLLATE pg_catalog."default",
+    CONSTRAINT fone_pkey PRIMARY KEY (fon_id),
+    CONSTRAINT rel_pessoa_fone FOREIGN KEY (pes_id)
+        REFERENCES public.pessoa (pessoa_id)
+)

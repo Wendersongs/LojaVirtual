@@ -1,0 +1,7 @@
+CREATE TABLE public.estado
+(
+    est_id serial  not null,
+    est_nome character varying(30) COLLATE pg_catalog."default",
+    est_sigla character(2) COLLATE pg_catalog."default",
+    CONSTRAINT end_estado_pkey PRIMARY KEY (est_id)
+)
