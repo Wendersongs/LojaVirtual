@@ -42,7 +42,7 @@ public class Pessoa implements Serializable {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    //  Relacionamento
+    //  Relacionamento com fone
    @OneToMany (mappedBy = "pessoa", cascade = CascadeType.ALL)
     private List<Fone> fones = new ArrayList<Fone>();
 
@@ -52,6 +52,19 @@ public class Pessoa implements Serializable {
 
     public void setFones(List<Fone> fones) {
         this.fones = fones;
+    }
+    
+//  Relacionamento com pedidos
+    
+    @OneToMany (mappedBy = "pedido", cascade = CascadeType.ALL)
+    private List<Pedido> pedidos = new ArrayList<Pedido>();
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
     }
 
 }

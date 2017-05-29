@@ -4,4 +4,4 @@ CREATE TABLE public.cidade
     est_id integer NOT NULL,
     cid_nome character varying(80) COLLATE pg_catalog."default",
     CONSTRAINT end_cidade_pkey PRIMARY KEY (cid_id),
-    CONSTRAINT fk_est_cid FOREIGN KEY (est_id))
+    CONSTRAINT fk_est_cid FOREIGN KEY (est_id) references estado (est_id))

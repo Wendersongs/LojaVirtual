@@ -2,7 +2,7 @@ CREATE TABLE public.pedido
 (
     pedido_id serial not null,
     pessoa_id integer,
-    data timestamp without time zone,
+    data timestamp without time zone DEFAULT now(),
     CONSTRAINT pedido_pkey PRIMARY KEY (pedido_id),
     CONSTRAINT fk_pessoa FOREIGN KEY (pessoa_id)
         REFERENCES public.pessoa (pessoa_id) MATCH SIMPLE

@@ -3,7 +3,7 @@ package persistencia;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.*;
-import beans.Pessoa;
+import beans.Pedido;
 
 public class PedidoDAO implements Serializable {
 
@@ -12,37 +12,39 @@ public class PedidoDAO implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public static void inserir(Pessoa pessoa) {
+	public static void inserir(Pedido pedido) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = sessao.beginTransaction();
-		sessao.save(pessoa);
+		sessao.save(pedido);
 		t.commit();
 		sessao.close();
 	}
 
-	public static void alterar(Pessoa pessoa) {
+	public static void alterar(Pedido pedido) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = sessao.beginTransaction();
-		sessao.update(pessoa);
+		sessao.update(pedido);
 		t.commit();
 		sessao.close();
 	}
 
-	public static void excluir(Pessoa pessoa) {
+	public static void excluir(Pedido pedido) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = sessao.beginTransaction();
-		sessao.delete(pessoa);
+		sessao.delete(pedido);
 		t.commit();
 		sessao.close();
 	}
 
-	public static List<Pessoa> listagem(String filtro) {
+	public static List<Pedido> listagem(String filtro) {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		Query consulta;
 		if (filtro.trim().length() == 0) {
-			consulta = sessao.createQuery("from Pessoa order by pessoa_nome");
-		} else {
-			consulta = sessao.createQuery("from Pessoa " + "where pessoa_nome like :parametro order by pessoa_nome");
+			consulta = sessao.createQuery("from Pedido order by pedido_id");
+		} 
+		
+		else {
+			consulta = sessao.createQuery("from Pedido " + "where pessoa_id = :parametro order by pedido_id");
 			consulta.setString("parametro", "%" + filtro + "%");
 		}
 
